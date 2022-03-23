@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char a[100],b[2];
+	int i=0,j=0,m=0;
+	printf("请输入一串字符：");
+	strlwr(gets(a));
+	printf("输入想要查找的字符：");
+	gets(b);
+	int blen=strlen(b);
+	for(i=0;a[i]!='\0';i++)
+	{
+		char tempb[3];
+		tempb[2]='\0';
+        for(j=0;j<blen;j++)
+			tempb[j]=a[i+j];
+		int res=strcmp(tempb,b);
+		if(res==0) m++;
+	}
+	printf("%d",m);
+	return 0;
+}
